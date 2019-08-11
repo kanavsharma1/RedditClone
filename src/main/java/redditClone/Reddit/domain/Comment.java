@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class Comment {
     @Id
     @GeneratedValue
-private long id;
+private Long id;
 private String body;
 
 
