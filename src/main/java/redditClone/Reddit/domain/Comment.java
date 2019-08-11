@@ -18,6 +18,6 @@ public class Comment extends Auditable  {
 private Long id;
 private String body;
 //Link
-    @ManyToOne
+@ManyToOne
 private Link link;
 }
