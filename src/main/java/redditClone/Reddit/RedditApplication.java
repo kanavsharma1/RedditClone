@@ -18,7 +18,7 @@ public class RedditApplication {
 		SpringApplication.run(RedditApplication.class, args);
 	}
 
-	@Bean
+	//@Bean
 	CommandLineRunner runner(LinkRepositoy linkRepositoy, CommentRepository commentRepository){
 		return args -> {
 		    //Creating a Link
