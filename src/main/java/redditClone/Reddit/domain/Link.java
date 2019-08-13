@@ -1,8 +1,6 @@
 package redditClone.Reddit.domain;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +11,9 @@ import java.util.List;
 
 
 @Entity
-@Data
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 public class Link extends Auditable{
     @Id
@@ -26,4 +26,13 @@ public class Link extends Auditable{
     //comments
     @OneToMany(mappedBy = "link")
     private List<Comment> comments = new ArrayList<>();
+
+    public Link(@NonNull String title, @NonNull String url) {
+        this.title = title;
+        this.url = url;
+    }
+
+    public void addComment(Comment comment){
+        comments.add(comment);
+    }
 }
